@@ -30,16 +30,13 @@ import { RouterLink, RouterView } from 'vue-router'
                     <li><a>Item 3</a></li>
                 </ul>
             </div>
-            <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+            <a class="btn btn-ghost normal-case text-xl">Sweet Home</a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
                 <li>
                     <RouterLink to="/">Home</RouterLink>
                 </li>
-                <!-- <li>
-                    <RouterLink to="/about">About</RouterLink>
-                </li> -->
                 <li>
                     <RouterLink to="/chatgpt">Chatgpt</RouterLink>
                 </li>

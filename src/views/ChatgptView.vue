@@ -11,11 +11,13 @@ export default {
       msgs: [
         { botmsg: "hello", usermsg: "hello" },
       ],
-      newMsg: "" // 添加一个新消息的数据绑定
+      newMsg: "", // 添加一个新消息的数据绑定
+      isDisabled: false, // 添加一个禁用按钮的数据绑定
     }
   },
   methods: {
     addMsg() {
+      this.isDisabled = true; // 禁用按钮
       axios.post('http://www.kumail.moe:8081/api/chat', { usermsg: this.newMsg }, { withCredentials: true })
         .then((response: { data: { chat: string } }) => {
           console.log(response.data)
@@ -25,9 +27,11 @@ export default {
             usermsg: this.newMsg
           });
           this.newMsg = ""; // 清空输入框
+          this.isDisabled = false; // 启用按钮
         })
         .catch((error: any) => {
           console.error(error);
+          this.isDisabled = false; // 启用按钮
         });
 
     }

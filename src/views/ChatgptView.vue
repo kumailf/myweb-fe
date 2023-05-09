@@ -47,7 +47,7 @@ export default {
       <div class="form-control">
         <div class="input-group">
           <input type="text" placeholder="Type here" class="input input-lg input-bordered" v-model="newMsg" @keyup.enter="addMsg()" />
-          <button class="btn btn-lg btn-square" @click="addMsg()">Send</button>
+          <button class="btn btn-lg btn-square" :disabled="isDisabled" @click="addMsg()">Send</button>
         </div>
       </div>
     </div>

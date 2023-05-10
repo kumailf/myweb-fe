@@ -40,6 +40,9 @@ import { RouterLink, RouterView } from 'vue-router'
                 <li>
                     <RouterLink to="/chatgpt">Chatgpt</RouterLink>
                 </li>
+                <li>
+                    <RouterLink to="/eat">吃啥吃啥</RouterLink>
+                </li>
             </ul>
         </div>
 

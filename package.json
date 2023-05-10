@@ -16,7 +16,7 @@
     "element-plus": "^2.3.3",
     "markd": "^1.2.0",
     "markdown-it": "^13.0.1",
-    "marked": "^5.0.0",
+    "marked": "^5.0.1",
     "theme-change": "^2.5.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"

@@ -13,26 +13,14 @@ import { RouterLink, RouterView } from 'vue-router'
                     </svg>
                 </label>
                 <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Item1</a></li>
-                    <li tabindex="0">
-                        <a class="justify-between">
-                            Parent
-                            <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24">
-                                <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                            </svg>
-                        </a>
-                        <ul class="p-2">
-                            <li>
-                                <RouterLink to="/">Home</RouterLink>
-                            </li>
-                            <li>
-                                <RouterLink to="/chatgpt">Chatgpt</RouterLink>
-                            </li>
-                            <li>
-                                <RouterLink to="/eat">吃啥吃啥</RouterLink>
-                            </li>
-                        </ul>
+                    <li>
+                        <RouterLink to="/">Home</RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/chatgpt">Chatgpt</RouterLink>
+                    </li>
+                    <li>
+                        <RouterLink to="/eat">吃啥吃啥</RouterLink>
                     </li>
                 </ul>
             </div>

@@ -23,11 +23,17 @@ import { RouterLink, RouterView } from 'vue-router'
                             </svg>
                         </a>
                         <ul class="p-2">
-                            <li><a>Submenu 1</a></li>
-                            <li><a>Submenu 2</a></li>
+                            <li>
+                                <RouterLink to="/">Home</RouterLink>
+                            </li>
+                            <li>
+                                <RouterLink to="/chatgpt">Chatgpt</RouterLink>
+                            </li>
+                            <li>
+                                <RouterLink to="/eat">吃啥吃啥</RouterLink>
+                            </li>
                         </ul>
                     </li>
-                    <li><a>Item 3</a></li>
                 </ul>
             </div>
             <a class="btn btn-ghost normal-case text-xl">Sweet Home</a>

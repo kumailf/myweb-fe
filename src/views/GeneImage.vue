@@ -24,7 +24,7 @@ export default {
         .catch((error: any) => {
           console.error(error);
           this.isDisabled = false; // 启用按钮
-          alert("服务挂了,别急,在修了")
+          alert("服务挂了,别急,在修了,也有可能是你输入了一些不太policy的关键词")
         });
 
     }

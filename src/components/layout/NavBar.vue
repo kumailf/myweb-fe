@@ -22,6 +22,9 @@ import { RouterLink, RouterView } from 'vue-router'
                     <li>
                         <RouterLink to="/eat">吃啥吃啥</RouterLink>
                     </li>
+                    <li>
+                        <RouterLink to="/geneimg">图片生成</RouterLink>
+                    </li>
                 </ul>
             </div>
             <a class="btn btn-ghost normal-case text-xl">Kumail`Home</a>

@@ -24,7 +24,7 @@ import { RouterLink, RouterView } from 'vue-router'
                     </li>
                 </ul>
             </div>
-            <a class="btn btn-ghost normal-case text-xl">Sweet Home</a>
+            <a class="btn btn-ghost normal-case text-xl">Kumail`Home</a>
         </div>
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
@@ -36,6 +36,9 @@ import { RouterLink, RouterView } from 'vue-router'
                 </li>
                 <li>
                     <RouterLink to="/eat">吃啥吃啥</RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/geneimg">图片生成</RouterLink>
                 </li>
             </ul>
         </div>

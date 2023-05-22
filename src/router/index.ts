@@ -18,6 +18,11 @@ const router = createRouter({
       path: '/eat',
       name: 'eat',
       component: () => import('../views/EatView.vue')
+    },
+    {
+      path: '/geneimg',
+      name: 'geneimg',
+      component: () => import('../views/GeneImage.vue')
     }
   ]
 })

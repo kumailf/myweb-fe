@@ -13,7 +13,7 @@ export default {
   methods: {
     geneImg() {
       this.isDisabled = true; // 禁用按钮
-      axios.post('http://www.kumail.moe:8081/api/gene/image', { usermsg: this.image_prompt }, { withCredentials: true })
+      axios.post('http://www.kumail.moe:8081/api/gene-image', { usermsg: this.image_prompt }, { withCredentials: true })
         .then((response: { data: { image_url: string } }) => {
           console.log(response.data)
           // 将接口返回的数据添加到消息记录中

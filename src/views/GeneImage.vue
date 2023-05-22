@@ -34,6 +34,7 @@ export default {
 
 <template>
   <main>
+    <p style="display: flex; justify-content: center;">请使用英语,中文大概率造出掉san图</p>
     <div style="display: flex; justify-content: center;">
       <div class="form-control">
         <div class="input-group">

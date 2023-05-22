@@ -31,8 +31,8 @@ export default {
         })
         .catch((error: any) => {
           console.error(error);
-          alert("服务挂了,别急,在修了")
           this.isDisabled = false; // 启用按钮
+          alert("服务挂了,别急,在修了")
         });
 
     }

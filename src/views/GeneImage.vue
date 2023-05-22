@@ -19,7 +19,9 @@ export default {
           // 将接口返回的数据添加到消息记录中
           this.image = response.data.image_url
           // this.image_prompt = ""; // 清空输入框
-          this.isDisabled = false; // 启用按钮
+          setTimeout(() => {
+            this.isDisabled = false; // Enable the button after two minutes
+          }, 120000);
         })
         .catch((error: any) => {
           console.error(error);
@@ -35,11 +37,13 @@ export default {
 <template>
   <main>
     <p style="display: flex; justify-content: center;">请使用英语,中文大概率造出掉san图</p>
+    <p style="display: flex; justify-content: center;">token不够用嘞,加了个两分钟的限制</p>
+
     <div style="display: flex; justify-content: center;">
       <div class="form-control">
         <div class="input-group">
-          <input type="text" placeholder="Describe Your Image" class="input input-lg input-bordered" v-model="image_prompt"
-            @keyup.enter="geneImg()" />
+          <input type="text" placeholder="Describe Your Image" class="input input-lg input-bordered"
+            v-model="image_prompt" @keyup.enter="geneImg()" />
           <button class="btn btn-lg btn-square" :disabled="isDisabled" @click="geneImg()">Go</button>
         </div>
       </div>

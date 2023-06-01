@@ -18,7 +18,7 @@ export default {
   methods: {
     addMsg() {
       this.isDisabled = true; // 禁用按钮
-      axios.post('http://www.kumail.moe:8081/api/chat', { usermsg: this.newMsg }, { withCredentials: true })
+      axios.post('https://www.kumail.moe/api/chat', { usermsg: this.newMsg }, { withCredentials: true })
         .then((response: { data: { chat: string } }) => {
           console.log(response.data)
           // 将接口返回的数据添加到消息记录中

@@ -23,6 +23,11 @@ const router = createRouter({
       path: '/geneimg',
       name: 'geneimg',
       component: () => import('../views/GeneImage.vue')
+    },
+    {
+      path: '/ytbdownload',
+      name: 'ytbdownload',
+      component: () => import('../views/YtbDownloadView.vue')
     }
   ]
 })

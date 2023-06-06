@@ -16,7 +16,7 @@ export default {
     getVideo() {
       this.isDisabled = true; // 禁用按钮
       this.title = "";
-      this.isLoading = true;
+      this.isLoading = false;
       axios.post('https://www.kumail.moe/api/ytb-download', { video_url: this.video_url }, { withCredentials: true })
         .then((response: { data: { status: string, title: string, file_name: string } }) => {
           console.log(response.data)
@@ -54,7 +54,7 @@ export default {
                 </div>
             </div>
         </div>
-        <span class="loading loading-infinity loading-lg" style="display: flex; justify-content: center;" :disable="isLoading"></span>
-        <a style="display: flex; justify-content: center;" href="/tmp/{{ file_name }}.mp4" v-if="file_name">{{ title }}  点击下载</a>
+        <span class="loading loading-infinity loading-lg" style="display: flex; justify-content: center;" :disabled="isLoading"></span>
+        <a style="display: flex; justify-content: center;" href="/tmp/${file_name}.mp4" v-if="file_name">{{ title }}  点击下载</a>
     </main>
 </template>

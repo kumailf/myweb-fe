@@ -13,6 +13,28 @@ export default {
     }
   },
   methods: {
+    downloadVideo() {
+      axios({
+        url: 'https://www.kumail.moe/api/ytb-download',
+        method: 'POST',
+        responseType: 'blob', 
+        data: {
+          video_url: 'https://www.youtube.com/watch?v=SYjanMT-bpY'
+        }
+      })
+      .then(response => {
+        const url = window.URL.createObjectURL(new Blob([response.data])); // 创建一个临时URL
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'video.mp4'); // 设置下载文件的名称
+        document.body.appendChild(link);
+        link.click(); // 触发点击事件下载文件
+      })
+      .catch(error => {
+        console.error(error);
+        // 处理错误
+      });
+    },
     getVideo() {
       this.isDisabled = true; // 禁用按钮
       this.title = "";
@@ -55,5 +77,7 @@ export default {
             </div>
         </div>
         <span class="loading loading-infinity loading-lg" style="display: flex; justify-content: center;" :disabled="isLoading"></span>
-        <a style="display: flex; justify-content: center;" :href="file_name" v-if="file_name">{{ title }}  点击下载</a>    </main>
+        <button @click="downloadVideo">下载视频</button>
+      </main>
 </template>
+

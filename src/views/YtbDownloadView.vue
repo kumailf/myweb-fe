@@ -12,10 +12,10 @@ export default {
   },
   methods: {
     downloadVideo() {
+      this.isDisabled = true; // 禁用按钮
+      this.progress = "下载中"
       axios.post('https://www.kumail.moe/api/ytb-download', { video_url: this.video_url }, { withCredentials: true, responseType: 'blob' })
       .then(response => {
-        this.isDisabled = true; // 禁用按钮
-        this.progress = "下载中"
         const url = window.URL.createObjectURL(new Blob([response.data])); // 创建一个临时URL
         const link = document.createElement('a');
         link.href = url;

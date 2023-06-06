@@ -4,7 +4,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      video_url: "",
+      video_url: "https://www.youtube.com/watch?v=SYjanMT-bpY",
       title: "",
       file_name: "",
       newMsg: "", // 添加一个新消息的数据绑定
@@ -14,14 +14,7 @@ export default {
   },
   methods: {
     downloadVideo() {
-      axios({
-        url: 'https://www.kumail.moe/api/ytb-download',
-        method: 'POST',
-        responseType: 'blob', 
-        data: {
-          video_url: 'https://www.youtube.com/watch?v=SYjanMT-bpY'
-        }
-      })
+      axios.post('https://www.kumail.moe/api/ytb-download', { video_url: this.video_url }, { withCredentials: true, responseType: 'blob' })
       .then(response => {
         const url = window.URL.createObjectURL(new Blob([response.data])); // 创建一个临时URL
         const link = document.createElement('a');

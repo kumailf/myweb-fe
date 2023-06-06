@@ -55,6 +55,5 @@ export default {
             </div>
         </div>
         <span class="loading loading-infinity loading-lg" style="display: flex; justify-content: center;" :disabled="isLoading"></span>
-        <a style="display: flex; justify-content: center;" href="/tmp/${file_name}.mp4" v-if="file_name">{{ title }}  点击下载</a>
-    </main>
+        <a style="display: flex; justify-content: center;" :href="`/tmp/${file_name}.mp4`" v-if="file_name">{{ title }}  点击下载</a>    </main>
 </template>

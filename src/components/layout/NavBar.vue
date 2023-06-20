@@ -20,6 +20,9 @@ import { RouterLink, RouterView } from 'vue-router'
                         <RouterLink to="/chatgpt">Chatgpt</RouterLink>
                     </li>
                     <li>
+                        <RouterLink to="/blog">Blog</RouterLink>
+                    </li>
+                    <li>
                         <RouterLink to="/eat">吃啥吃啥</RouterLink>
                     </li>
                     <li>
@@ -28,6 +31,7 @@ import { RouterLink, RouterView } from 'vue-router'
                     <li>
                         <RouterLink to="/ytbdownload">Youtube视频下载</RouterLink>
                     </li>
+
                 </ul>
             </div>
             <a class="btn btn-ghost normal-case text-xl">Kumail`Home</a>
@@ -39,6 +43,9 @@ import { RouterLink, RouterView } from 'vue-router'
                 </li>
                 <li>
                     <RouterLink to="/chatgpt">Chatgpt</RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/blog">Blog</RouterLink>
                 </li>
                 <li>
                     <RouterLink to="/eat">吃啥吃啥</RouterLink>

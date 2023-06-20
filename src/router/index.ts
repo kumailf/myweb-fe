@@ -28,6 +28,11 @@ const router = createRouter({
       path: '/ytbdownload',
       name: 'ytbdownload',
       component: () => import('../views/YtbDownloadView.vue')
+    },
+    {
+      path: '/blog',
+      name: 'blog',
+      component: () => import('../views/BlogView.vue')
     }
   ]
 })

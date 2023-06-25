@@ -5,7 +5,7 @@ export default {
   data() {
     return {
       activeItem: '',
-      blogs: [],
+      blogs: ["凯子统计学"],
       content: ''
     };
   },

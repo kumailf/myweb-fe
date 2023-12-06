@@ -4,6 +4,7 @@ import axios from 'axios';
 export default {
   data() {
     return {
+      weiboLink: '',
       lotteryTypes: [
         { value: 'repost', label: '转发抽奖' },
         { value: 'comment', label: '评论抽奖' },

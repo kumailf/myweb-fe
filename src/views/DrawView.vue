@@ -11,6 +11,7 @@ export default {
         // 添加其他抽奖方式的选项
       ],
       selectedLotteryType: 'repost', // 设置默认选中的抽奖方式
+      winningCount: 1,
       lotteryResult: '',
       isDisabled: false,
     };
@@ -19,7 +20,7 @@ export default {
     startLottery() {
       this.isDisabled = true;
 
-      axios.post('https://www.kumail.moe/api/draw', { weiboLink: this.weiboLink, selectedLotteryType: this.selectedLotteryType, }, { withCredentials: true })
+      axios.post('https://www.kumail.moe/api/draw', { weiboLink: this.weiboLink, selectedLotteryType: this.selectedLotteryType, winningCount: this.winningCount}, { withCredentials: true })
         .then((response: { data: { winner: string } }) => {
           console.log(response.data)
           // 将接口返回的数据添加到消息记录中
@@ -49,6 +50,9 @@ export default {
 
         <label for="weiboLink">输入微博链接:</label>
         <input v-model="weiboLink" type="text" id="weiboLink" placeholder="在这里输入微博链接">
+        
+        <label for="winningCount">中奖人数:</label>
+        <input v-model.number="winningCount" type="number" id="winningCount" placeholder="中奖人数">
 
         <div class="card-actions justify-end">
           <button class="btn btn-primary" :disabled="isDisabled" @click="startLottery">开始抽奖</button>

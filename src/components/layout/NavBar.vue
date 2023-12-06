@@ -28,7 +28,9 @@ import { RouterLink, RouterView } from 'vue-router'
                     <li>
                         <RouterLink to="/ytbdownload">Youtube视频下载</RouterLink>
                     </li>
-
+                    <li>
+                        <RouterLink to="/draw">抽奖</RouterLink>
+                    </li>
                 </ul>
             </div>
             <a class="btn btn-ghost normal-case text-xl">Kumail`Home</a>
@@ -49,6 +51,9 @@ import { RouterLink, RouterView } from 'vue-router'
                 </li>
                 <li>
                     <RouterLink to="/ytbdownload">Youtube视频下载</RouterLink>
+                </li>
+                <li>
+                    <RouterLink to="/draw">抽奖</RouterLink>
                 </li>
             </ul>
         </div>

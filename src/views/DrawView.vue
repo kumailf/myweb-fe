@@ -17,23 +17,33 @@ export default {
     };
   },
   methods: {
-    startLottery() {
+    async startLottery() {
       this.isDisabled = true;
 
-      axios.post('https://www.kumail.moe/api/draw', { weiboLink: this.weiboLink, selectedLotteryType: this.selectedLotteryType, winningCount: this.winningCount}, { withCredentials: true })
-        .then((response: { data: { winner: string } }) => {
-          console.log(response.data)
-          // 将接口返回的数据添加到消息记录中
-          this.lotteryResult = response.data.winner
-          setTimeout(() => {
-            this.isDisabled = false; // Enable the button after two minutes
-          }, 120000);
-        })
+      try {
+        const response = await axios.post('https://www.kumail.moe/api/draw', {
+          weiboLink: this.weiboLink,
+          selectedLotteryType: this.selectedLotteryType,
+          winningCount: this.winningCount
+        }, {
+          withCredentials: true
+        });
 
-    },
-      },
+        console.log(response.data);
+        this.lotteryResult = response.data.winner;
+
+        // 等待两分钟后启用按钮
+        await new Promise(resolve => setTimeout(resolve, 120000));
+        this.isDisabled = false;
+      } catch (error) {
+        console.error('请求错误:', error);
+        this.isDisabled = false; // 请求错误时也要启用按钮
+      }
     }
+  }
+}
 </script>
+
 
 <template>
   <main>

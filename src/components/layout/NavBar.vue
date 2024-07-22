@@ -17,7 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
                         <RouterLink to="/">Home</RouterLink>
                     </li>
                     <li>
-                        <RouterLink to="/chatgpt">Chatgpt</RouterLink>
+                        <RouterLink to="/sera">Sera生诞专用</RouterLink>
                     </li>
                     <li>
                         <RouterLink to="/eat">吃啥吃啥</RouterLink>
@@ -41,7 +41,7 @@ import { RouterLink, RouterView } from 'vue-router'
                     <RouterLink to="/">Home</RouterLink>
                 </li>
                 <li>
-                    <RouterLink to="/chatgpt">Chatgpt</RouterLink>
+                    <RouterLink to="/sera">Sera生诞专用</RouterLink>
                 </li>
                 <li>
                     <RouterLink to="/eat">吃啥吃啥</RouterLink>

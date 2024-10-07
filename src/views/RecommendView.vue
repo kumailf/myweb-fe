@@ -12,31 +12,34 @@ export default {
     }
   },
   methods: {
-    async submit() {
+    submit() {
       this.isDisabled = true; // 禁用按钮
-      try {
-        const response = await axios.post('https://www.kumail.moe/recommend', {
-          song_title: this.song_title,
-          song_artist: this.song_artist,
-          your_name: this.your_name
-        }, { withCredentials: true });
-        // 将接口返回的数据添加到消息记录中
+      axios.post('https://www.kumail.moe/api/recommend', {
+        song_title: this.song_title,
+        song_artist: this.song_artist,
+        your_name: this.your_name
+      }, { withCredentials: true })
+      .then((response) => {
         console.log(response.data)
-        // 假设接口返回的数据中有 message 字段
+        // 将接口返回的数据添加到消息记录中
         this.newMsg = response.data.message || "提交成功！";
         // 清空输入框
         this.song_title = "";
         this.song_artist = "";
         this.your_name = "";
-      } catch (error: any) {
+      })
+      .catch((error) => {
         console.error(error);
         this.newMsg = "服务挂了,别急,在修了";
-      } finally {
         this.isDisabled = false; // 启用按钮
-      }
+      })
+      .finally(() => {
+        this.isDisabled = false; // 请求完成后启用按钮
+      });
     }
   }
 }
+
 </script>
 
 <template>

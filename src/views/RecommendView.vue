@@ -15,7 +15,7 @@ export default {
     async submit() {
       this.isDisabled = true; // 禁用按钮
       try {
-        const response = await axios.post('https://www.kumail.moe/api/recommend', {
+        const response = await axios.post('https://www.kumail.moe/recommend', {
           song_title: this.song_title,
           song_artist: this.song_artist,
           your_name: this.your_name
@@ -30,7 +30,7 @@ export default {
         this.your_name = "";
       } catch (error: any) {
         console.error(error);
-        this.newMsg = "服务挂了,别急,在修了,也有可能是你输入了一些不太policy的关键词";
+        this.newMsg = "服务挂了,别急,在修了";
       } finally {
         this.isDisabled = false; // 启用按钮
       }

@@ -32,9 +32,6 @@ export default {
         console.error(error);
         this.newMsg = "服务挂了,别急,在修了";
         this.isDisabled = false; // 启用按钮
-      })
-      .finally(() => {
-        this.isDisabled = false; // 请求完成后启用按钮
       });
     }
   }

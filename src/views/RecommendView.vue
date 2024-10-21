@@ -12,26 +12,28 @@ export default {
     }
   },
   methods: {
-    async submit() {
-      this.isDisabled = true;
-
-      try {
-        const response = await axios.post('https://www.kumail.moe/api/recommend', {
-            song_title: this.song_title,
-            song_artist: this.song_artist,
-            your_name: this.your_name
-        }, {
-          withCredentials: true
+    submit() {
+      this.isDisabled = true; // 禁用按钮
+      axios.post('https://www.kumail.moe/api/recommend', { 
+        song_title: this.song_title,
+        song_artist: this.song_artist,
+        your_name: this.your_name
+      }, { withCredentials: true })
+        .then((response: { data: { message: string } }) => {
+          console.log(response.data)
+          // 将接口返回的数据添加到消息记录中
+          this.message = response.data.message
+          // this.image_prompt = ""; // 清空输入框
+          setTimeout(() => {
+            this.isDisabled = false; // Enable the button after two minutes
+          }, 120000);
+        })
+        .catch((error: any) => {
+          console.error(error);
+          this.isDisabled = false; // 启用按钮
+          alert("请求错误")
         });
 
-        console.log(response.data);
-        this.message = response.data.message;
-
-        this.isDisabled = false;
-      } catch (error) {
-        console.error('请求错误:', error);
-        this.isDisabled = false; // 请求错误时也要启用按钮
-      }
     }
   }
 }

@@ -18,7 +18,12 @@ export default {
         song_title: this.song_title,
         song_artist: this.song_artist,
         your_name: this.your_name
-      }, { withCredentials: true })
+      }, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true
+      })
         .then((response: { data: { message: string } }) => {
           console.log(response.data)
           // 将接口返回的数据添加到消息记录中
@@ -26,7 +31,7 @@ export default {
           // this.image_prompt = ""; // 清空输入框
           setTimeout(() => {
             this.isDisabled = false; // Enable the button after two minutes
-          }, 120000);
+          }, 1000);
         })
         .catch((error: any) => {
           console.error(error);

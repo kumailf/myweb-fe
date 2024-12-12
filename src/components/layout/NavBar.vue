@@ -16,9 +16,9 @@ import { RouterLink, RouterView } from 'vue-router'
                     <li>
                         <RouterLink to="/">Home</RouterLink>
                     </li>
-                    <li>
+                    <!-- <li>
                         <RouterLink to="/sera">Sera生诞专用</RouterLink>
-                    </li>
+                    </li> -->
                     <li>
                         <RouterLink to="/eat">吃啥吃啥</RouterLink>
                     </li>
@@ -31,9 +31,9 @@ import { RouterLink, RouterView } from 'vue-router'
                     <li>
                         <RouterLink to="/draw">抽奖</RouterLink>
                     </li>
-                    <li>
+                    <!-- <li>
                         <RouterLink to="/recommend">推歌频道</RouterLink>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <a class="btn btn-ghost normal-case text-xl">Kumail`Home</a>
@@ -43,9 +43,9 @@ import { RouterLink, RouterView } from 'vue-router'
                 <li>
                     <RouterLink to="/">Home</RouterLink>
                 </li>
-                <li>
+                <!-- <li>
                     <RouterLink to="/sera">Sera生诞专用</RouterLink>
-                </li>
+                </li> -->
                 <li>
                     <RouterLink to="/eat">吃啥吃啥</RouterLink>
                 </li>
@@ -58,9 +58,9 @@ import { RouterLink, RouterView } from 'vue-router'
                 <li>
                     <RouterLink to="/draw">抽奖</RouterLink>
                 </li>
-                <li>
+                <!-- <li>
                     <RouterLink to="/recommend">推歌频道</RouterLink>
-                </li>
+                </li> -->
             </ul>
         </div>
 
